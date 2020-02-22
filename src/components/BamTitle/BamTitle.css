@@ -1,0 +1,21 @@
+.bamtitle {
+    height: 60px;
+    margin: 32px auto 16px;
+    font-size: 60px;
+    font-family: "Helvetica", sans-serif;
+    font-weight: bold;
+}
+
+.bamtitle span {
+    display: inline-block;
+}
+
+.bamtitle .animated {
+    animation-name: bam;
+    animation-duration: 1s;
+}
+
+@keyframes bam {
+    from {transform: scale(3.0);}
+    to {transform: scale(1.0);}
+}

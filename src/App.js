@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hangman } from './components';
+import { Hangman, BamTitle } from './components';
 
 import './App.css';
 
@@ -7,8 +7,8 @@ const App = () => {
   return (
     <div className="App">
       <div className="container">
-        <h1>React Hangman</h1>
-        <Hangman incorrectGuessCount={10}></Hangman>
+        <BamTitle word={'HANGMAN'}/>
+        <Hangman incorrectGuessCount={0}/>
       </div>
     </div>
   );
