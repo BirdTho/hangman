@@ -24,10 +24,15 @@ const getScoreBoardIfNeeded = (props) => {
 export const TitleScreen = (props) => {
   const {
     onStartGame,
+    wins, losses,
   } = props;
   return (
     <div className={'title-window'}>
-      <div className={'hang-title'}>
+      <div
+        className={'hang-title'}
+        /* Title page is shorter without scoreboard, so push it down a tad */
+        style={(wins || losses ? {} : {marginTop: '100px'})}
+      >
         <span>H</span>
         <span>A</span>
         <span>N</span>
