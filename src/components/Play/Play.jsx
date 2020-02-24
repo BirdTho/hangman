@@ -1,7 +1,7 @@
 import React from 'react';
 
 import KeyboardEventHandler from 'react-keyboard-event-handler';
-import { BamTitle, Hangman, RevealedWord, Wasted, UsedLetters } from '../';
+import { BamTitle, Hangman, RevealedWord, Wasted, UsedLetters, HealthBar } from '../';
 
 import './Play.css';
 
@@ -121,6 +121,7 @@ export class Play extends React.Component {
         <div className={'title-container'}>
           <BamTitle word={'HANGMAN'}/>
         </div>
+        <HealthBar strikes={strikes} max={10}/>
         <div className={'hang-container'}>
           <Hangman incorrectGuessCount={strikes}/>
           {strikes === 10 ? <Wasted/> : null}

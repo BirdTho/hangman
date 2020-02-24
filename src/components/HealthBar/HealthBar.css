@@ -1,0 +1,49 @@
+.health-bar {
+    position: relative;
+    width: 406px;
+    height: 26px;
+    margin-left: 50px;
+    display: block;
+    box-sizing: content-box;
+    margin-bottom: 10px;
+    clip-path: polygon(0 0, 380px 0, 406px 26px, 0 26px);
+    background-color: black;
+}
+
+.health-bar > div {
+    clip-path: polygon(0 0, 375.5px 0, 395.5px 20px, 0 20px);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 400px;
+    height: 20px;
+}
+
+.health-bar .background {
+    background-color: white;
+}
+
+.health-bar .health-juice {
+    background-color: #d50000;
+}
+
+.health-bar .health-juice.pulsing {
+    animation-name: pulseRed;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes pulseRed {
+    0% {
+        background-color: #d50000;
+    }
+
+    50% {
+        background-color: #de9b9b;
+    }
+
+    100% {
+        background-color: #d50000;
+    }
+}

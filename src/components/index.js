@@ -10,3 +10,4 @@ export * from './NewGameButton/NewGameButton';
 export * from './ScoreBoard/ScoreBoard';
 export * from './ResetStatsButton/ResetStatsButton';
 export * from './UsedLetters/UsedLetters';
+export * from './HealthBar/HealthBar';
