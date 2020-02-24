@@ -1,0 +1,26 @@
+.wasted {
+    width: 503px;
+    height: 503px;
+    left: -1.5px;
+    top: 0;
+
+    position: absolute;
+    transform-style: preserve-3d;
+    animation-delay: 0s;
+    animation-name: wasted;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes wasted {
+    from {
+        background-color: transparent;
+        transform: scale(1.5) rotate(-30deg);
+        opacity: 0;
+    }
+    to {
+        background-color: rgba(128, 128, 128, 0.5);
+        transform: scale(1.0) rotate(0deg);
+        opacity: 1;
+    }
+}

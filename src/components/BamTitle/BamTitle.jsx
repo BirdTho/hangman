@@ -1,5 +1,4 @@
 import React from 'react';
-import BamLetter from './BamLetter';
 
 import './BamTitle.css';
 
@@ -18,16 +17,18 @@ export class BamTitle extends React.Component {
     };
 
     this.sizingRef = React.createRef();
+    this.letters = [];
   }
 
   componentDidMount() {
-    debugger;
-    const width = Math.ceil(this.sizingRef.current.getBoundingClientRect().width);
+    console.log('Componentdidmount for bamtitle');
+    const width = Math.ceil(this.sizingRef.current.getBoundingClientRect().width) + 1;
     this.setState({ width });
     this.timer = setInterval(this.reveal, 600);
   }
 
   reveal = () => {
+    console.log('Reveal called');
     let revealedLetters = this.state.revealedLetters;
     ++revealedLetters;
     if (revealedLetters === this.props.word.length) {
@@ -48,10 +49,16 @@ export class BamTitle extends React.Component {
       },
     } = this;
 
-    let letters = [];
-    for (let i = 0; i < revealedLetters; ++i) {
-      letters.push(<BamLetter key={i} letter={word.charAt(i)}/>);
-    }
+    if (revealedLetters === 0 || this.letters.length === revealedLetters) return this.letters;
+
+    // Save previous list of letters - Why make a new list of identical elements each time?
+    // Would be terrible form for very large words.
+    let letters = this.letters;
+    let letter = word.charAt(revealedLetters - 1);
+
+    // Need an &nbsp in unicode for the word
+    letter = letter === ' ' ? '\u00A0' : letter;
+    letters.push(<span key={revealedLetters - 1} className={'animated'}>{letter}</span>);
     return letters;
   };
 
@@ -67,7 +74,7 @@ export class BamTitle extends React.Component {
     } = this;
 
     return (<div className={'bamtitle'} style={{ width }}>
-      {width ? this.getBamLetters() : (<span ref={sizingRef} style={{ opacity: 0, }}>{word}</span>)}
+      {width ? this.getBamLetters() : (<span ref={sizingRef} style={{ opacity: 0, }}>{word.replace(' ', '\u00A0')}</span>)}
     </div>);
   }
 }

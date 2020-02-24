@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Holtwood+One+SC&display=swap');
+
+.title-window {
+    width: 500px;
+}
+
+.title-window > p:first-of-type {
+    text-align: center;
+    font-size: 36px;
+    margin: 24px 0;
+
+    font-family: "Helvetica", sans-serif;
+}
+
+.title-window .scoreboard {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.title-window .reset-stats-button {
+    margin-bottom: 50px;
+}
+
+.hang-title {
+    width: 500px;
+    height: 450px;
+    margin-top: 25px;
+    font-family: 'Holtwood One SC', 'Helvetica', sans-serif;
+    font-size: 80px;
+    position: relative;
+}
+
+.hang-title > span, .hang-title > div {
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    opacity: 0;
+}
+
+.hang-title > span {
+    position: absolute;
+    line-height: 80px;
+    animation-name: appearScale;
+}
+
+.hang-title > span:nth-child(1) {
+    margin-left: -44px;
+    left: 250px;
+}
+
+.hang-title > span:nth-child(2) {
+    margin-left: -35px;
+    left: 130px;
+    top: 120px;
+    animation-delay: 400ms;
+}
+
+.hang-title > span:nth-child(3) {
+    margin-left: -39px;
+    left: 250px;
+    top: 120px;
+    animation-delay: 200ms;
+}
+
+.hang-title > span:nth-child(4) {
+    margin-left: -32px;
+    left: 370px;
+    top: 120px;
+    animation-delay: 600ms;
+}
+
+.hang-title > span:nth-child(5) {
+    margin-left: -46px;
+    left: 130px;
+    top: 360px;
+    animation-delay: 1000ms;
+}
+
+.hang-title > span:nth-child(6) {
+    margin-left: -35px;
+    left: 250px;
+    top: 240px;
+    animation-delay: 800ms;
+}
+
+.hang-title > span:nth-child(7) {
+    margin-left: -39px;
+    left: 370px;
+    top: 360px;
+    animation-delay: 1200ms;
+}
+
+.hang-title > div {
+    background-color: black;
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 15px;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    animation-name: appear;
+}
+
+.hang-title > div:nth-child(8) {
+    height: 35px;
+    left: 250px;
+    margin-left: -7.5px;
+    top: 82.5px;
+    animation-delay: 100ms;
+}
+
+.hang-title > div:nth-child(9) {
+    height: 30px;
+    left: 195px;
+    transform: rotate(90deg);
+    margin-left: -15px;
+    top: 150px;
+    animation-delay: 300ms;
+}
+
+.hang-title > div:nth-child(10) {
+    height: 30px;
+    left: 318px;
+    transform: rotate(90deg);
+    margin-left: -15px;
+    top: 150px;
+    animation-delay: 500ms;
+}
+
+.hang-title > div:nth-child(11) {
+    height: 35px;
+    left: 250px;
+    margin-left: -7.5px;
+    top: 202.5px;
+    animation-delay: 700ms;
+}
+
+.hang-title > div:nth-child(12) {
+    height: 50px;
+    left: 195px;
+    margin-left: -7.5px;
+    top: 315px;
+    transform: rotate(45deg);
+    animation-delay: 900ms;
+}
+
+.hang-title > div:nth-child(13) {
+    height: 50px;
+    left: 305px;
+    margin-left: -7.5px;
+    top: 315px;
+    transform: scale(1.0) rotate(-45deg);
+    animation-delay: 1100ms;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appearScale {
+    from {
+        transform: scale(2.0);
+        -webkit-transform: scale(2.0);
+        -moz-transform: scale(2.0);
+        -ms-transform: scale(2.0);
+        -o-transform: scale(2.0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        opacity: 1;
+    }
+}

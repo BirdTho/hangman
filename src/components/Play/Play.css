@@ -1,0 +1,12 @@
+.hang-container {
+    overflow: hidden;
+    position: relative;
+    width: 500px;
+    height: 503px;
+}
+
+.title-container {
+    width: 500px;
+    height: 108px;
+    overflow: hidden;
+}

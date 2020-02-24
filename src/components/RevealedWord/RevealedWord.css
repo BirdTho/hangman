@@ -1,0 +1,33 @@
+.revealed {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    max-width: 500px;
+    text-align: center;
+}
+
+.letter {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.letter:not(:first-child) {
+    margin-left: 15px;
+}
+
+.letter > span {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: block;
+    font-stretch: expanded;
+    font-weight: bold;
+}
+
+.letter > div {
+    width: 40px;
+    height: 10px;
+    background-color: black;
+    display: block;
+}

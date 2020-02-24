@@ -1,0 +1,40 @@
+
+.scoreboard {
+    width: 300px;
+    height: 150px;
+    display: block;
+    margin: 50px auto;
+}
+
+.scoreboard > div {
+    display: inline-block;
+}
+
+.scoreboard .divider {
+    width: 12px;
+    height: 150px;
+    background-color: black;
+}
+
+.scoreboard .score {
+    width: 144px;
+    vertical-align: top;
+}
+
+.scoreboard .score > span {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+    font-weight: bold;
+    display: block;
+    width: 144px;
+}
+
+.scoreboard .score > span:nth-child(1) {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.scoreboard .score > span:nth-child(2) {
+    margin-top: 24px;
+    font-size: 30px;
+}

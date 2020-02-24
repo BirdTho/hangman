@@ -1,0 +1,19 @@
+.used-letters {
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: "Courier New", sans-serif;
+    font-weight: bolder;
+    font-variant: small-caps;
+    text-align: center;
+    width: 500px;
+}
+
+.used-letters > span {
+    margin: 0 10px 15px;
+    display: inline-block;
+}
+
+.used-letters > span.crossed {
+    color: #aeaeae;
+    text-decoration: line-through;
+}

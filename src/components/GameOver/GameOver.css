@@ -1,0 +1,25 @@
+.gameover {
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin-top: 100px;
+}
+
+.gameover .message > p:first-child {
+    padding-top: 12px;
+}
+
+.gameover .message > p {
+    text-align: center;
+    font-size: 36px;
+    line-height: 24px;
+    font-family: "Helvetica", sans-serif;
+}
+
+.gameover .scoreboard {
+    margin-bottom: 15px;
+}
+
+.gameover .reset-stats-button {
+    margin-bottom: 50px;
+}
