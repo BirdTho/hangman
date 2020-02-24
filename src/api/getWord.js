@@ -5,7 +5,7 @@ class WordApi {
    * @param {Object} words
    */
   constructor(words) {
-    this.words = Object.keys(words.default);
+    this.words = words.default;
     this.length = this.words.length;
   }
 
