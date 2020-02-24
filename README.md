@@ -1,3 +1,15 @@
+# BirdTho implementation
+Feature list
+* Uses localStorage for win/loss stats with the ability to reset stats
+* Health bar
+* Nice animated logos
+* Huge word dictionary
+* Direct keyboard input via keydown event
+* Ignores repeated guesses
+* GTA-style "wasted" on defeat
+* Different displays for initial Title screen vs Post-game screen
+* Title screen displays differently if localStorage has a saved win/loss record
+
 # hangman
 
 Implement the classic [Hangman

@@ -113,7 +113,7 @@ export class Play extends React.Component {
       }
     } = this;
     return (
-      <div>
+      <div className={'play-container'}>
         <KeyboardEventHandler
           handleEventType={'keydown'}
           handleKeys={['alphabetic']}
@@ -128,6 +128,7 @@ export class Play extends React.Component {
         </div>
         <RevealedWord word={getRevealedWord()}/>
         <UsedLetters lettersGuessed={lettersGuessed}/>
+        <p>Press a letter on your keyboard.</p>
       </div>
 
     );
