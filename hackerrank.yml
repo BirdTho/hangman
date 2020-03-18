@@ -3,7 +3,7 @@ configuration:
   has_webserver: true
   ide_config:
     default_open_files:
-      - src/App.js
+      - src/App.jsx
     project_menu:
       run: npm start
       install: npm install

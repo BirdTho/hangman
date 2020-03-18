@@ -2,43 +2,54 @@ import React from 'react';
 import { TitleScreen, Play, GameOver } from '../';
 import wordApi from '../../api/getWord';
 
-const GAME_STATES = {
-  TITLE: 'TITLE',
-  PLAYING: 'PLAYING',
-  GAME_OVER: 'GAME_OVER',
-  VICTORY: 'VICTORY',
-  GETTING_WORD: 'GETTING_WORD',
-};
+const LOCAL_STORAGE_KEY: string = 'BirdThoHangmanGameData';
 
-const LOCAL_STORAGE_KEY = 'BirdThoHangmanGameData';
+enum GAME_STATES {
+  TITLE = 'Title',
+  PLAYING = 'Playing',
+  GAME_OVER = 'GameOver',
+  VICTORY = 'Victory',
+  GETTING_WORD = 'GettingWord',
+}
 
-export class MainGame extends React.Component {
-  constructor(props) {
+interface MainGameState {
+  wins: number,
+  losses: number,
+  currentWord: string,
+  gameState: GAME_STATES,
+}
+
+export class MainGame extends React.Component<{}, MainGameState> {
+  constructor(props: {}) {
     super(props);
 
-    let wins, losses;
+    let wins: number;
+    let losses: number;
     if (window.localStorage) {
-      const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || {};
+      const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '') || {};
       wins = data.wins;
       losses = data.losses;
+    } else {
+      wins = 0;
+      losses = 0;
     }
 
     this.state = {
-      wins: wins || 0,
-      losses: losses || 0,
+      wins,
+      losses,
       currentWord: '',
       gameState: GAME_STATES.TITLE,
-    }
+    };
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate() {
     if (this.state.gameState === GAME_STATES.GETTING_WORD) {
       this.getWord();
     }
   }
 
   onResetStats = () => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, null);
+    localStorage.setItem(LOCAL_STORAGE_KEY, '');
 
     this.setState({
       wins: 0,
@@ -52,13 +63,13 @@ export class MainGame extends React.Component {
     });
   };
 
-  onEndGame = (didWin) => {
+  onEndGame = (didWin: boolean) => {
     let {
       wins,
       losses,
     } = this.state;
 
-    let gameState;
+    let gameState: GAME_STATES;
     if (didWin) {
       ++wins;
       gameState = GAME_STATES.VICTORY;
@@ -79,7 +90,7 @@ export class MainGame extends React.Component {
 
   getWord = () => {
     try {
-      const word = wordApi.getWord();
+      const word: string | null = wordApi.getWord();
       if (word) {
         this.setState({
           currentWord: word,

@@ -2,12 +2,12 @@ import React from 'react';
 
 import './ScoreBoard.css';
 
-export const ScoreBoard = (props) => {
-  const {
-    wins,
-    losses,
-  } = props;
+interface ScoreBoardProps {
+  wins: number,
+  losses: number,
+}
 
+export const ScoreBoard = ({wins, losses}: ScoreBoardProps) => {
   return (
     <div className={'scoreboard'}>
       <div className={'score'}>

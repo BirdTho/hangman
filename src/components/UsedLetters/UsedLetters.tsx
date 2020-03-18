@@ -1,10 +1,12 @@
 import React from 'react';
 
+import { LettersGuessed } from '..';
+
 import './UsedLetters.css';
 
-const ABCS = [...'abcdefghijklmnopqrstuvwxyz'];
+const ABCS: string[] = [...'abcdefghijklmnopqrstuvwxyz'];
 
-const getLetters = (lettersGuessed) => {
+const getLetters = (lettersGuessed: LettersGuessed) => {
   return ABCS.map((letter, i) => {
     return (
       <span key={i} className={lettersGuessed[letter] ? 'crossed' : ''}>{letter}</span>
@@ -12,10 +14,10 @@ const getLetters = (lettersGuessed) => {
   });
 };
 
-export const UsedLetters = (props) => {
+export const UsedLetters = ({ lettersGuessed }: { lettersGuessed: LettersGuessed }) => {
   return (
     <div className={'used-letters'}>
-      {getLetters(props.lettersGuessed)}
+      {getLetters(lettersGuessed)}
     </div>
   );
 };

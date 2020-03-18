@@ -2,22 +2,31 @@ import React from 'react';
 
 import './BamTitle.css';
 
-export class BamTitle extends React.Component {
-  /**
-   * @param {{
-   *   word: string
-   * }} props
-   */
-  constructor(props) {
+interface BamTitleProps {
+  word: string,
+}
+
+interface BamTitleState {
+  revealedLetters: number,
+  width: number,
+}
+
+export class BamTitle extends React.Component<BamTitleProps, BamTitleState> {
+  sizingRef: any;
+  letters: any[];
+  timer: number | undefined;
+
+  constructor(props: BamTitleProps) {
     super(props);
 
     this.state = {
       revealedLetters: 0,
-      width: null,
+      width: 0,
     };
 
     this.sizingRef = React.createRef();
     this.letters = [];
+    this.timer = undefined;
   }
 
   componentDidMount() {

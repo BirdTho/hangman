@@ -3,13 +3,14 @@ import React from 'react';
 import './TitleScreen.css';
 import { NewGameButtom, ResetStatsButton, ScoreBoard } from '..';
 
-const getScoreBoardIfNeeded = (props) => {
-  const {
-    onResetStats,
-    wins,
-    losses,
-  } = props;
+interface TitleScreenProps {
+  onResetStats: () => void,
+  onStartGame: () => void,
+  wins: number,
+  losses: number,
+}
 
+const getScoreBoardIfNeeded = ({ onResetStats, wins, losses}: TitleScreenProps) => {
   if (wins > 0 || losses > 0) {
     return [
       <p>Welcome back!</p>,
@@ -21,7 +22,7 @@ const getScoreBoardIfNeeded = (props) => {
   }
 };
 
-export const TitleScreen = (props) => {
+export const TitleScreen = (props: TitleScreenProps) => {
   const {
     onStartGame,
     wins, losses,

@@ -2,19 +2,23 @@ import React from 'react';
 
 import './RevealedWord.css';
 
-const LETTER_WIDTH = 40;
-const LETTER_SPACING = 15;
+const LETTER_WIDTH: number = 40;
+const LETTER_SPACING: number = 15;
 
-export const RevealedWord = (props) => {
-  const word = props.word.toUpperCase();
+interface RevealedWordProps {
+  word: string,
+}
+
+export const RevealedWord = (props: RevealedWordProps) => {
+  const word: string = props.word.toUpperCase();
 
   // Limiting line length to 9 chars for fitting in 500px wide area
-  const length = Math.min(word.length, 9);
-  const width = length * LETTER_WIDTH + (length - 1) * LETTER_SPACING;
+  const length: number = Math.min(word.length, 9);
+  const width: number = length * LETTER_WIDTH + (length - 1) * LETTER_SPACING;
 
-  let arr = [];
-  let j = 0;
-  [...word].forEach((l, i) => {
+  let arr: JSX.Element[] = [];
+  let j: number = 0;
+  [...word].forEach((l: string, i: number) => {
 
     if (i > 0 && i % 9 === 0) {
       arr.push(<br key={j++}/>);

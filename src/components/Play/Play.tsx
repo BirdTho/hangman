@@ -7,25 +7,35 @@ import './Play.css';
 
 const SPACE = '\u00A0';
 
-export class Play extends React.Component {
-  /**
-   *
-   * @param {{
-   *   word: string,
-   *   onEndGame: function(boolean)
-   * }} props
-   */
-  constructor(props) {
+interface PlayProps {
+  word: string,
+  onEndGame: (didWin: boolean) => void,
+}
+
+export interface LettersGuessed {
+  [key: string]: boolean
+}
+
+interface PlayState {
+  lettersGuessed: LettersGuessed,
+  strikes: number,
+  solved: boolean,
+}
+
+const initialPlayState: PlayState = {
+  lettersGuessed: {},
+  strikes: 0,
+  solved: false,
+};
+
+export class Play extends React.Component<PlayProps, PlayState> {
+  constructor(props: PlayProps) {
     super(props);
 
-    this.state = {
-      lettersGuessed: {},
-      strikes: 0,
-      solved: false,
-    };
+    this.state = initialPlayState;
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps: PlayProps, prevState: PlayState) {
     if (prevState.strikes === 9 && this.state.strikes === 10) {
       // Do defeat handling here
       setTimeout(() => {
@@ -55,7 +65,7 @@ export class Play extends React.Component {
 
     for (let i = 0; i < length; ++i) {
       let char = word.charAt(i);
-      if (char !== SPACE && lettersGuessed[char] !== true) {
+      if (char !== SPACE && !lettersGuessed[char]) {
         newWord += SPACE;
         isValid = false;
       } else {
@@ -76,7 +86,7 @@ export class Play extends React.Component {
     return newWord;
   };
 
-  handleKeyDown = (key) => {
+  handleKeyDown = (key: string) => {
     let {
       props: {
         word,
