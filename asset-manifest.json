@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/hangman/static/css/main.da3268db.chunk.css",
-    "main.js": "/hangman/static/js/main.900b7dbf.chunk.js",
-    "main.js.map": "/hangman/static/js/main.900b7dbf.chunk.js.map",
+    "main.js": "/hangman/static/js/main.57f20e3d.chunk.js",
+    "main.js.map": "/hangman/static/js/main.57f20e3d.chunk.js.map",
     "runtime-main.js": "/hangman/static/js/runtime-main.1f104b8a.js",
     "runtime-main.js.map": "/hangman/static/js/runtime-main.1f104b8a.js.map",
     "static/js/2.a0f781cd.chunk.js": "/hangman/static/js/2.a0f781cd.chunk.js",
     "static/js/2.a0f781cd.chunk.js.map": "/hangman/static/js/2.a0f781cd.chunk.js.map",
     "index.html": "/hangman/index.html",
-    "precache-manifest.283eb3185f292ecdef508f82a36d584e.js": "/hangman/precache-manifest.283eb3185f292ecdef508f82a36d584e.js",
+    "precache-manifest.2983c101c26978a1eafc003789082ff4.js": "/hangman/precache-manifest.2983c101c26978a1eafc003789082ff4.js",
     "service-worker.js": "/hangman/service-worker.js",
     "static/css/main.da3268db.chunk.css.map": "/hangman/static/css/main.da3268db.chunk.css.map"
   }
